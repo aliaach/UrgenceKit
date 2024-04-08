@@ -1,4 +1,4 @@
-# [Jabran Boilerplate Django](https://www.linkedin.com/in/jabran-lmhani-6b3a821a2/)
+# [Boilerplate Django](https://www.linkedin.com/in/jabran-lmhani-6b3a821a2/)
 
 <br />
 
