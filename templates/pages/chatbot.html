@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+{% load i18n static admin_datta %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% get_direction as direction %}
+{% get_admin_setting as admin_setting %}
+<html lang="en">
+
+
+<head>
+    {% include 'includes/head.html' %}
+    {% block extrastyle %}{% endblock extrastyle %}
+    {% block extrahead %}{% endblock extrahead %}
+  </head>
+  <body>
+  
+    {% block pre_loader %}
+      {% include 'includes/pre-loader.html' %}
+    {% endblock pre_loader %}
+    
+    {% block sidebar %}
+      {% include 'includes/sidebar.html' %}
+    {% endblock sidebar %}
+  
+    {% block header %}
+      {% include 'includes/navigation.html' %}
+    {% endblock header %}
+  {% load static %}
+  {% include 'includes/scripts.html' %}
+  {% block extra_js %}{% endblock extra_js %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        
+        
+    }
+
+    #chat-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 10px;
+        position: relative; 
+        margin-right: 15%;
+        margin-top: -4%;
+       
+        /* Position relative for absolute positioning */
+    }
+
+    #chat-label {
+        position: absolute;
+        top: -20px; /* Adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #BBB4DE;
+        color: #fff;
+        padding: 8px 30px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    #chat-history {
+        border: 1px solid #ccc;
+        padding: 10px;
+        height: 300px; /* Adjust height as needed */
+        overflow-y: auto;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    #message-form {
+        display: flex;
+        align-items: center;
+    }
+
+    #user-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    #message-form button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #BBB4DE;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #message-form button:hover {
+        background-color: #5c3899;
+    }
+
+    .message {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .message.sent {
+        background-color: #f1f1f1;
+        text-align: right;
+    }
+
+    .message.received {
+        background-color: #e6e6e6;
+    }
+
+    .message-label {
+        position: absolute;
+        top: -15px;
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 5px;
+    }
+
+    .message.sent .message-label {
+        right: 10px;
+        background-color: #50e7e7;
+        color: #333;
+    }
+
+    .message.received .message-label {
+        left: 10px;
+        background-color: #BBB4DE;
+        color: #fff;
+    }
+</style>
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <h1>zz</h1>
+    <div id="chat-container">
+        <div id="chat-label">Urgiebot</div>
+        <div id="chat-history"></div>
+        <form id="message-form">
+            {% csrf_token %}
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatHistory = document.getElementById('chat-history');
+            const messageForm = document.getElementById('message-form');
+            const userInput = document.getElementById('user-input');
+
+            messageForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const message = userInput.value.trim();
+                if (message === '') return;
+
+                const messageItem = document.createElement('div');
+                messageItem.classList.add('message', 'sent');
+                messageItem.innerHTML = '<span class="message-label">You</span> ' + message;
+                chatHistory.appendChild(messageItem);
+
+                userInput.value = ''; // Clear input field
+
+                fetch('{% url "chatbot" %}', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ 'user_input': message, 'csrfmiddlewaretoken': '{{ csrf_token }}' })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('message', 'received');
+                    botMessage.innerHTML = '<span class="message-label">Bot</span> ' + data.response;
+                    chatHistory.appendChild(botMessage);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

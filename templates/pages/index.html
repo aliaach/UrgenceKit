@@ -4,82 +4,435 @@
 {% block breadcrumbs %}{% endblock breadcrumbs %}
 
 {% block content %}
+<!-- [ User Platforme] start -->
+
+<head>
+  <style>
+   .hovereffect {
+  
+  float: center;
+  overflow: center;
+  position: center;
+  text-align: center;
+  cursor: default;
+  background: transparent;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 50px 40px;
+}
+
+.hovereffect img {
+ 
+  position:center;
+  max-width:280px;
+  width: calc(100% + 20px);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-10px,0,0);
+  transform: translate3d(-10px,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hovereffect:hover img {
+
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #080808;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  overflow: hidden;
+  padding: 0.5em 0;
+  background-color: transparent;
+}
+
+.hovereffect h2:after {
+  position: absolute;
+  color: #000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #0b0a0a;
+  content: '';
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+}
+
+.hovereffect:hover h2:after {
+  
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+
+.hovereffect a, .hovereffect p {
+  color: #080808;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+#hh{
+  color: aqua;
+}
+  </style>
+</head>
+<div class="row">
+  <div class="col-md-12">
+    
+      
+        <img src="{% static 'assets/images/user/logo3.png' %}"  class="rounded mx-auto d-block" style="max-height: 300px;">
+      
+    </div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br>
+  <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Build your kit with our UrgenceKit app!</h5>
+          <p class="card-text">In times of crisis, every second counts. UrgenceKit is your comprehensive emergency preparedness companion, providing essential tools and resources to keep you and your loved ones safe.</p>
+          <p class="card-text">From first aid guides to emergency contacts, survival tips to real-time alerts, UrgenceKit equips you with the knowledge and tools you need to navigate any emergency situation with confidence.</p>
+          <p class="card-text">Explore our app and discover how you can be better prepared for emergencies, no matter where you are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="hovereffect">
+            <img class="center img-responsive" src="{% static 'assets/images/user/ttt.jpg' %}" style="max-height: 170px;" class="container-lg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>
+                <a href="{% url 'chatbot' %}">click here to communicate with Urgiebot</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3 class="font-weight-bold"  class="text-center">Earthquake</h3>
+      </div>
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="hovereffect">
+            <img class="center img-responsive" src="{% static 'assets/images/user/tr.jpg' %}" style="max-height: 170px;" class="container-lg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>
+                <a href="{% url 'chatbot' %}">click here to communicate with Urgiebot</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3 class="font-weight-bold"  class="text-center">tempest</h3>
+         
+      </div>
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="hovereffect">
+            <img class="center img-responsive" src="{% static 'assets/images/user/ff.webp' %}" style="max-height: 170px;" class="container-lg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>
+                <a href="{% url 'chatbot' %}">click here to communicate with Urgiebot</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3  class="font-weight-bold" class="text-center">House Fire</h3>
+      </div>
+      
+    </div>
+  </div>
+  <br><br><br><br>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="hovereffect">
+            <img class="center img-responsive" src="{% static 'assets/images/user/chaleur.jpg' %}" style="max-height: 170px;" class="container-lg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>
+                <a href="{% url 'chatbot' %}">click here to communicate with Urgiebot</a>
+              </p>
+            </div>
+          </div>
+        </div><br>
+        <h3  class="font-weight-bold" class="text-center">heat wave </h3>
+      </div>
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="hovereffect">
+            <img class="center img-responsive" src="{% static 'assets/images/user/flood.jpg' %}" style="max-height: 170px;" class="container-lg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>
+                <a href="{% url 'chatbot' %}">click here to communicate with Urgiebot</a>
+              </p>
+            </div>
+          </div>
+        </div><br>
+        <h3 class="font-weight-bold"  class="text-center"> flood</h3>
+      </div>
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="hovereffect">
+            <img class="center img-responsive" src="{% static 'assets/images/user/snow.jpg' %}" style="max-height: 170px;" class="container-lg" alt="">
+            <div class="overlay">
+              <h2></h2>
+              <p>
+                <a href="{% url 'chatbot' %}">click here to communicate with Urgiebot</a>
+              </p>
+            </div>
+          </div>
+        </div><br>
+        <h3  class="font-weight-bold" class="text-center">snow storm</h3>
+      </div>
+    </div>
+  </div>
+  
+  <br><br><br><br><br><br>
+ <!-- [ Main Content ] start --> <!-- [ Main Content ] start --> <!-- [ Main Content ] start --> <!-- [ Main Content ] start -->
+  <!-- [ Main Content ] start -->
+  <div  class="row">
+   
+    
+    <!--[ Monthly  sales section ] end-->
+    <!--[ year  sales section ] starts-->
+    
+    
+    <!--[ year  sales section ] end-->
+    <!--[ Recent Users ] start-->
+    <div class="col-xl-8 col-md-6">
+      <div class="card Recent-Users">
+
+   
+      
+        
+          <div class="card-header">
+            <h4>Build A Kit</h4>
+            <h5>A basic emergency supply kit could include the following recommended items:</h5>
+
+          </div>
+          <div class="card-block px-0 py-3">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="unread">
+                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/done_logo.png' %}"
+                        alt="activity-user">
+                    </td>
+                    <td>
+                      <h6 class="mb-1">Water (one gallon per person per day for several days, for drinking and sanitation)</h6>
+                      
+                    </td>
+                    <td>
+                      
+                    </td>
+                    
+                  </tr>
+                  <tr class="unread">
+                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/done_logo.png' %}"
+                        alt="activity-user">
+                    </td>
+                    <td>
+                      <h6 class="mb-1">Food (at least a several-day supply of non-perishable food)</h6>
+                      
+                    </td>
+                    <td>
+                      
+                    </td>
+                    
+                  </tr>
+                  <tr class="unread">
+                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/done_logo.png' %}"
+                        alt="activity-user">
+                    </td>
+                    <td>
+                      <h6 class="mb-1">Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert</h6>
+                      
+                    </td>
+                    <td>
+                     
+                    </td>
+                    
+                  </tr>
+                  <tr class="unread">
+                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/done_logo.png' %}"
+                        alt="activity-user">
+                    </td>
+                    <td>
+                      <h6 class="mb-1">Flashlight</h6>
+                      
+                    </td>
+                    <td>
+                      
+                    </td>
+                    
+                  </tr>
+                  <tr class="unread">
+                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/done_logo.png' %}"
+                        alt="activity-user">
+                    </td>
+                    <td>
+                      <h6 class="mb-1">Cell phone with chargers and a backup battery</h6>
+                      
+                    </td>
+                    <td>
+                      
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        
+
+
+      </div>
+    </div>
+    <!--[ Recent Users ] end-->
+
+    <!-- [ statistics year chart ] start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card card-event">
+        <div class="card-block">
+          <div class="row align-items-center justify-content-center">
+            <div class="col">
+              <h5 class="m-0">Maintaining Your Kit</h5>
+            </div>
+            <div class="col-auto">
+              <label class="label theme-bg2 text-white f-14 f-w-400 float-right">urgence kit</label>
+            </div>
+          </div><br>
+          <h6>After assembling your kit remember to maintain it so it’s ready when needed:</h6>
+
+       <ul>
+  <li>Keep canned food in a cool, dry place.</li>
+  <li>Store boxed food in tightly closed plastic or metal containers.</li>
+  <li>Replace expired items as needed.</li>
+  <li>Re-think your needs every year and update your kit as your family’s needs change.</li>
+</ul>
+          <h6 class="text-muted mt-4 mb-0">You can ask API </h6>
+          <i class="fab fa-angellist text-c-purple f-50"></i>
+        </div>
+      </div>
+      
+    </div>
+    <!-- [ statistics year chart ] end -->
+    
+    <!--[social-media section] end-->
+    <!-- [ rating list ] starts-->
+    <div class="col-xl-4 col-md-6">
+      <div class="card user-list">
+        <div class="card-header">
+          <h3>Kit Storage Locations</h3>
+          <h5>Prepare Emergency Supplies for Home, Work, and Cars</h5>
+          
+          <ul>
+            <li>
+              <h6 class="font-weight-bold">Home:</h6>
+              <p>Keep this kit in a designated place and have it ready in case you have to leave your home quickly. Make sure all family members know where the kit is kept.</p>
+            </li>
+            
+            <li>
+              <h6 class="font-weight-bold">Work:</h6>
+              <p>Be prepared to shelter at work for at least 24 hours. Your work kit should include food, water, and other necessities like medicines, as well as comfortable walking shoes, stored in a “grab and go” case.</p>
+            </li>
+            
+            <li>
+              <h6 class="font-weight-bold">Car:</h6>
+              <p>In case you are stranded, keep a kit of emergency supplies in your car.</p>
+            </li>
+          </ul>
+
+      </div>
+    </div>
+    <!-- [ rating list ] end-->
+    
+
+  </div>
+  <!-- [ Main Content ] end -->
+
+
+  <div class="col-xl-7 col-md-6">
+    <div class="card Recent-Users">
+        {% if numero_urgences %}
+            <div class="card-header">
+                <h5>Numero Urgences</h5>
+            </div>
+            <div class="card-block px-0 py-3">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            {% for nu in numero_urgences %}
+                                <tr class="unread">
+                                    <td>
+                                        <img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/R.png' %}" alt="activity-user">
+                                    </td>
+                                    <td>
+                                        <h6 class="mb-1">{{ nu.name }}</h6>
+                                        <p class="m-0">{{ nu.number }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% else %}
+            <p>No Numero Urgences found.</p>
+        {% endif %}
+    </div>
+</div>
+
+
+
+<!-- [ User Platforme ] end  -->
 
   <!-- [ Main Content ] start -->
   <div class="row">
     
-    <!--[ daily sales section ] start-->
-    <div class="col-md-6 col-xl-4">
-      <div class="card daily-sales">
-        <div class="card-block">
-          <h6 class="mb-4">Daily Sales</h6>
-          <div class="row d-flex align-items-center">
-            <div class="col-9">
-              <h3 class="f-w-300 d-flex align-items-center m-b-0"><i
-                  class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>$
-                249.95</h3>
-            </div>
-
-            <div class="col-3 text-right">
-              <p class="m-b-0">67%</p>
-            </div>
-          </div>
-          <div class="progress m-t-30" style="height: 7px;">
-            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 50%;"
-              aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[ daily sales section ] end-->
-    <!--[ Monthly  sales section ] starts-->
-    <div class="col-md-6 col-xl-4">
-      <div class="card Monthly-sales">
-        <div class="card-block">
-          <h6 class="mb-4">Monthly Sales</h6>
-          <div class="row d-flex align-items-center">
-            <div class="col-9">
-              <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
-                  class="feather icon-arrow-down text-c-red f-30 m-r-10"></i>$
-                2.942.32</h3>
-            </div>
-            <div class="col-3 text-right">
-              <p class="m-b-0">36%</p>
-            </div>
-          </div>
-          <div class="progress m-t-30" style="height: 7px;">
-            <div class="progress-bar progress-c-theme2" role="progressbar" style="width: 35%;"
-              aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[ Monthly  sales section ] end-->
-    <!--[ year  sales section ] starts-->
-    <div class="col-md-12 col-xl-4">
-      <div class="card yearly-sales">
-        <div class="card-block">
-          <h6 class="mb-4">Yearly Sales</h6>
-          <div class="row d-flex align-items-center">
-            <div class="col-9">
-              <h3 class="f-w-300 d-flex align-items-center  m-b-0"><i
-                  class="feather icon-arrow-up text-c-green f-30 m-r-10"></i>$
-                8.638.32</h3>
-            </div>
-            <div class="col-3 text-right">
-              <p class="m-b-0">80%</p>
-            </div>
-          </div>
-          <div class="progress m-t-30" style="height: 7px;">
-            <div class="progress-bar progress-c-theme" role="progressbar" style="width: 70%;"
-              aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[ year  sales section ] end-->
+  
     <!--[ Recent Users ] start-->
-    <div class="col-xl-8 col-md-6">
+    <div class="col-xl-8 col-md-5">
       <div class="card Recent-Users">
 
         {% if products %}
@@ -109,10 +462,7 @@
                           ${{ p.price }}
                         </h6>
                       </td>
-                      <td>
-                        <a href="#" class="label theme-bg2 text-white f-12">View</a>
-                        <a href="#" class="label theme-bg text-white f-12">Delete</a>
-                      </td>
+                    
                     </tr>
 
                   {% endfor %}
@@ -124,98 +474,8 @@
 
         {% else %}
         
-          <div class="card-header">
-            <h5>Recent Users</h5>
-          </div>
-          <div class="card-block px-0 py-3">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <tbody>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-1.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Isabella Christensen</h6>
-                      <p class="m-0">Lorem Ipsum is simply…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-green f-10 m-r-15"></i>11
-                        MAY 12:56</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-2.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Mathilde Andersen</h6>
-                      <p class="m-0">Lorem Ipsum is simply text of…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-red f-10 m-r-15"></i>11 MAY
-                        10:35</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-3.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Karla Sorensen</h6>
-                      <p class="m-0">Lorem Ipsum is simply…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-green f-10 m-r-15"></i>9 MAY
-                        17:38</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-1.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Ida Jorgensen</h6>
-                      <p class="m-0">Lorem Ipsum is simply text of…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted f-w-300"><i class="fas fa-circle text-c-red f-10 m-r-15"></i>19
-                        MAY
-                        12:56</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                  <tr class="unread">
-                    <td><img class="rounded-circle" style="width:40px;" src="{% static 'assets/images/user/avatar-2.jpg' %}"
-                        alt="activity-user">
-                    </td>
-                    <td>
-                      <h6 class="mb-1">Albert Andersen</h6>
-                      <p class="m-0">Lorem Ipsum is simply dummy…</p>
-                    </td>
-                    <td>
-                      <h6 class="text-muted"><i class="fas fa-circle text-c-green f-10 m-r-15"></i>21
-                        July 12:56</h6>
-                    </td>
-                    <td><a href="#!" class="label theme-bg2 text-white f-12">Reject</a><a href="#!"
-                        class="label theme-bg text-white f-12">Approve</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+         
+         
 
         {% endif %}
 
@@ -224,491 +484,70 @@
     </div>
     <!--[ Recent Users ] end-->
 
-    <!-- [ statistics year chart ] start -->
-    <div class="col-xl-4 col-md-6">
-      <div class="card card-event">
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center">
-            <div class="col">
-              <h5 class="m-0">Upcoming Event</h5>
-            </div>
-            <div class="col-auto">
-              <label class="label theme-bg2 text-white f-14 f-w-400 float-right">34%</label>
-            </div>
-          </div>
-          <h2 class="mt-3 f-w-300">45<sub class="text-muted f-14">Competitors</sub></h2>
-          <h6 class="text-muted mt-4 mb-0">You can participate in event </h6>
-          <i class="fab fa-angellist text-c-purple f-50"></i>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-block border-bottom">
-          <div class="row d-flex align-items-center">
-            <div class="col-auto">
-              <i class="feather icon-zap f-30 text-c-green"></i>
-            </div>
-            <div class="col">
-              <h3 class="f-w-300">235</h3>
-              <span class="d-block text-uppercase">TOTAL IDEAS</span>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row d-flex align-items-center">
-            <div class="col-auto">
-              <i class="feather icon-map-pin f-30 text-c-blue"></i>
-            </div>
-            <div class="col">
-              <h3 class="f-w-300">26</h3>
-              <span class="d-block text-uppercase">TOTAL LOCATIONS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- [ statistics year chart ] end -->
-    <!--[social-media section] start-->
-    <div class="col-md-12 col-xl-4">
-      <div class="card card-social">
-        <div class="card-block border-bottom">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-              <i class="fab fa-facebook-f text-primary f-36"></i>
-            </div>
-            <div class="col text-right">
-              <h3>12,281</h3>
-              <h5 class="text-c-green mb-0">+7.2% <span class="text-muted">Total Likes</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center card-active">
-            <div class="col-6">
-              <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>35,098</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width:60%;height:6px;"
-                  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6 class="text-center  m-b-10"><span class="text-muted m-r-5">Duration:</span>3,539</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme2" role="progressbar" style="width:45%;height:6px;"
-                  aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <div class="card card-social">
-        <div class="card-block border-bottom">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-              <i class="fab fa-twitter text-c-blue f-36"></i>
-            </div>
-            <div class="col text-right">
-              <h3>11,200</h3>
-              <h5 class="text-c-purple mb-0">+6.2% <span class="text-muted">Total Likes</span>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center card-active">
-            <div class="col-6">
-              <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>34,185</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-green" role="progressbar" style="width:40%;height:6px;"
-                  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6 class="text-center  m-b-10"><span class="text-muted m-r-5">Duration:</span>4,567</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-blue" role="progressbar" style="width:70%;height:6px;"
-                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xl-4">
-      <div class="card card-social">
-        <div class="card-block border-bottom">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-              <i class="fab fa-google-plus-g text-c-red f-36"></i>
-            </div>
-            <div class="col text-right">
-              <h3>10,500</h3>
-              <h5 class="text-c-blue mb-0">+5.9% <span class="text-muted">Total Likes</span></h5>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center card-active">
-            <div class="col-6">
-              <h6 class="text-center m-b-10"><span class="text-muted m-r-5">Target:</span>25,998</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width:80%;height:6px;"
-                  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <h6 class="text-center  m-b-10"><span class="text-muted m-r-5">Duration:</span>7,753</h6>
-              <div class="progress">
-                <div class="progress-bar progress-c-theme2" role="progressbar" style="width:50%;height:6px;"
-                  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--[social-media section] end-->
-    <!-- [ rating list ] starts-->
-    <div class="col-xl-4 col-md-6">
-      <div class="card user-list">
-        <div class="card-header">
-          <h5>Rating</h5>
-        </div>
-        <div class="card-block">
-          <div class="row align-items-center justify-content-center m-b-20">
-            <div class="col-6">
-              <h2 class="f-w-300 d-flex align-items-center float-left m-0">4.7 <i
-                  class="fas fa-star f-10 m-l-10 text-c-yellow"></i></h2>
-            </div>
-            <div class="col-6">
-              <h6 class="d-flex  align-items-center float-right m-0">0.4 <i
-                  class="fas fa-caret-up text-c-green f-22 m-l-10"></i></h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>5</h6>
-              <h6 class="align-items-center float-right">384</h6>
-              <div class="progress m-t-30 m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 70%;"
-                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>4</h6>
-              <h6 class="align-items-center float-right">145</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 35%;"
-                  aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>3</h6>
-              <h6 class="align-items-center float-right">24</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 25%;"
-                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>2</h6>
-              <h6 class="align-items-center float-right">1</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 10%;"
-                  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-xl-12">
-              <h6 class="align-items-center float-left"><i
-                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>1</h6>
-              <h6 class="align-items-center float-right">0</h6>
-              <div class="progress m-t-30  m-b-20" style="height: 6px;">
-                <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="0"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- [ rating list ] end-->
-    <div class="col-xl-8 col-md-12 m-b-30">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-            aria-selected="false">Today</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active show" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-            aria-controls="profile" aria-selected="true">This
-            Week</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-            aria-controls="contact" aria-selected="false">All</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Activity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">3:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
 
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="activity-user">Albert Andersen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Jumps over the lazy</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">2:37 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-red">Missed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-red f-10"></i>
-                </td>
-              </tr>
 
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="activity-user">Silje Larsen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Dog the quick brown</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">10:23 AM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-purple">Delayed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">4:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    
 
-        </div>
-        <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Activity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="activity-user">Albert Andersen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Jumps over the lazy</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">2:37 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-red">Missed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-red f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">3:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">4:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="activity-user">Silje Larsen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Dog the quick brown</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">10:23 AM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-purple">Delayed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
 
-        </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Activity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="activity-user">Silje Larsen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Dog the quick brown</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">10:23 AM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-purple">Delayed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-purple f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">3:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="activity-user">Albert Andersen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">Jumps over the lazy</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">2:37 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-red">Missed</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-red f-10"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h6 class="m-0"><img class="rounded-circle  m-r-10" style="width:40px;"
-                      src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="activity-user">Ida Jorgensen</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">The quick brown fox</h6>
-                </td>
-                <td>
-                  <h6 class="m-0">4:28 PM</h6>
-                </td>
-                <td>
-                  <h6 class="m-0 text-c-green">Done</h6>
-                </td>
-                <td class="text-right"><i class="fas fa-circle text-c-green f-10"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+  <div class="col-xl-5 col-md-4">
+    <div class="card Recent-Users">
+        {% if kit %}
+            <div class="card-header">
+                <h5>Kits</h5>
+            </div>
+            <div class="card-block px-0 py-3">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            {% for k in kit %}
+                                <tr class="unread">
+                                    <td>
+                                        <h6 class="mb-1">{{ k.name }}</h6>
+                                        <h6 class="mb-1">The Store : {{ k.magazin }}</h6>
+                                        <p class="m-0">Items:</p>
+                                        <ul>
+                                            {% if k.item1 %}
+                                                <li>{{ k.item1.name }} - Price: {{ k.item1.price }}</li>
+                                            {% endif %}
+                                            {% if k.item2 %}
+                                                <li>{{ k.item2.name }} - Price: {{ k.item2.price }}</li>
+                                            {% endif %}
+                                            {% if k.item3 %}
+                                                <li>{{ k.item3.name }} - Price: {{ k.item3.price }}</li>
+                                            {% endif %}
+                                            {% if k.item4 %}
+                                                <li>{{ k.item4.name }} - Price: {{ k.item4.price }}</li>
+                                            {% endif %}
+                                            {% if k.item5 %}
+                                                <li>{{ k.item5.name }} - Price: {{ k.item5.price }}</li>
+                                            {% endif %}
+                                            {% if k.item6 %}
+                                                <li>{{ k.item6.name }} - Price: {{ k.item6.price }}</li>
+                                            {% endif %}
+                                        </ul>
+                                        <p class="m-0">Total Price: {{ k.total_price }}</p>
+                                        <form action="{% url 'add_to_favorites' k.id %}" method="post">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="kit_id" value="{{ k.id }}">
+                                          <button type="submit" class="btn btn-primary">Add to Favorites</button>
+                                      </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% else %}
+            <p>No kits found.</p>
+        {% endif %}
     </div>
+</div>
+<div class="row">
+  <div class="col-12 text-center mt-3">
+    <a href="{% url 'favorite_kits' %}" class="btn btn-primary">Go to Purchases</a>
+  </div>
+</div>
 
   </div>
   <!-- [ Main Content ] end -->
