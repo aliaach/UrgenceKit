@@ -65,7 +65,7 @@ def favorite_kits(request):
 
 
 # Configure the API key
-genai.configure(api_key="AIzaSyBM0u9qyFmIS1RNNYUFdp5JKzFwvMu5WKs")
+genai.configure(api_key="Je l'ai supprimmé pour maitre le repositary en public")
 
 
 system_instruction = "Hello! I'm Urgiebot, your emergency assistance bot. My purpose is to provide aid during emergencies and disasters.Here's how our conversation will go:,I'll start by introducing myself and explaining my purpose,Then, I'll ask you to specify the type of catastrophe you're interested in.,Once you've made your selection, I'll provide concise yet comprehensive information about the chosen catastrophe,This information will include general details about the catastrophe, preventive measures you can take, and the essential items you'll need in your survival kit,Let's work together to ensure your safety and preparedness during emergencies!\n\n"
